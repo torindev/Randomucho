@@ -22,8 +22,21 @@ fun main(args: Array<String>) {
         println("Amount can't be a zero")
         return
     }
+        //E:\Music\Music OLD\MTV;E:\Music\Music OLD\MyTop;E:\Music\Music OLD\лето 2011;E:\Music\Music OLD\музыка c ineta
+    if (src?.contains(";") == true) {
+        val dirs = src.split(";")
 
-    val rm = RanMusic(src, dst, sum, null)
-    rm.start()
+        val partSum = sum / dirs.size
+
+        for (dir in dirs) {
+            val rm = RanMusic(dir.trim(), dst, partSum, null)
+            rm.start()
+        }
+
+    } else {
+
+        val rm = RanMusic(src, dst, sum, null)
+        rm.start()
+    }
 
 }

@@ -34,7 +34,7 @@ class RanMusic(
 
         val resultMusicList = ArrayList<File>()
 
-        while (sum > 0) {
+        while (sum > 0 && musicList.size > 0) {
             resultMusicList.add(musicList.removeAt(Random.nextInt(musicList.size)))
             sum--
         }
